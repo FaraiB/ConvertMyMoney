@@ -3,13 +3,18 @@ const app = express()// creates new express application
 const path = require('path')
 
 const convert = require('./lib/convert')
+const apiBCB = require('./lib/api.bcb')
 
 app.set('view engine', 'ejs')//in order to use ejs
 app.set('views', path.join(__dirname, 'views'))//create a dir using current + views
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/', (req, res) => {
-    res.render('home')
+app.get('/', async(req, res) => {
+    const rate = await apiBCB.getRate()
+    //console.log('rate', rate)
+    res.render('home', {
+        rate
+    })
 })
 app.get('/rate', (req, res) => {
     const{ rate, qty} = req.query

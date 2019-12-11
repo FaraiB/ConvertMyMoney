@@ -1,9 +1,18 @@
 <%- include('header') %>
 
-<form method = "GET" action = "/rate">
-    <input name = "rate" placeholder="Dollar rate" value = "<%= rate %>"><br>
-    <input name = "qty" placeholder="Amount of dollars"><br>
-    <button>Convert!</button>
+<div class="d-flex justify-content-center">
+<form method = "GET" action = "/rate" class="exchange">
+    <div class="mt-auto p-1">
+        <input name = "rate" class="form-control" placeholder="Dollar rate" required autofocus value = "<%= rate %>">
+        </div>
+    <div class="mt-auto p-1">
+        <input name = "qty" class="form-control" placeholder="Amount of dollars" required autofocus>
+    </div>
+    <div class="mt-auto p-1">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Convert!</button>
+    </div>
 </form>
+</div>
+
 
 <%- include('footer') %>

@@ -1,5 +1,7 @@
-body{
+html, body{
+    height: 100%;
     text-align: center;
+
 }
 h1 img{
     width: 489px;
@@ -13,20 +15,17 @@ input{
     padding: 10px;
 
 }
-button{
-    border: 1px solid #000000;
-    background: #d8d8d8;
-    font-size: 20px;
-    margin: 2px;
-    padding: 10px;
-}
+
 .result{
     padding: 10px;
     border: 1px solid #d8d8d8;
     background: #fbfbfb;
 }
-#footer{
+footer{
     position: absolute;
     bottom: 0;
-    text-align: center;
+ 
+}
+#exchange{
+    margin: 40px;
 }

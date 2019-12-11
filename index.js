@@ -11,7 +11,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', async(req, res) => {
     const rate = await apiBCB.getRate()
-    console.log('rate', rate)
     res.render('home', {
         rate
     })
